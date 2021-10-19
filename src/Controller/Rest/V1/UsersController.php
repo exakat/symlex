@@ -36,7 +36,7 @@ class UsersController extends EntityControllerAbstract
     }
 
     public function cgetAction(Request $request)
-    {
+    : array {
         if (!$this->session->isAdmin()) {
             throw new AccessDeniedException("You don't have permission to query this service");
         }

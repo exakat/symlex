@@ -21,8 +21,8 @@ class EntityControllerAbstract
     protected $editFormName = '';
 
     protected $session;
-    protected $modelFactory;
-    protected $formFactory;
+    protected ModelFactory $modelFactory;
+    protected FormFactory $formFactory;
     protected $model;
 
     public function __construct(Session $session, ModelFactory $modelFactory, FormFactory $formFactory)

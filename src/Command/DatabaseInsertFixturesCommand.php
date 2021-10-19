@@ -15,12 +15,12 @@ class DatabaseInsertFixturesCommand extends CommandAbstract
     /**
      * @var Connection
      */
-    protected $connection;
+    protected Connection $connection;
 
     /**
      * @var string
      */
-    protected $fixturesDirectory;
+    protected string $fixturesDirectory;
 
     /**
      * @param null|string $name

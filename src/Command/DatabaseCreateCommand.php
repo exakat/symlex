@@ -12,7 +12,7 @@ use Doctrine\DBAL\Connection;
  */
 class DatabaseCreateCommand extends CommandAbstract
 {
-    protected $connection;
+    protected Connection $connection;
 
     public function __construct($name, Connection $connection)
     {
@@ -29,7 +29,7 @@ class DatabaseCreateCommand extends CommandAbstract
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
-    {
+    : int {
         $db = $this->connection;
         $params = $db->getParams();
         unset($params['dbname']);

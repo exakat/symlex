@@ -7,7 +7,7 @@ use Psr\Log\LogLevel;
 
 trait LoggerTrait
 {
-    private $logger;
+    private LoggerInterface $logger;
 
     public function setLogger(LoggerInterface $logger)
     {

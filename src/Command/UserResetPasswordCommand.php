@@ -13,8 +13,8 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class UserResetPasswordCommand extends CommandAbstract
 {
-    protected $mail;
-    protected $user;
+    protected Mail $mail;
+    protected User $user;
 
     public function __construct($name, Mail $mail, User $user)
     {

@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 trait SessionTrait
 {
     /** @var Session */
-    protected $session;
+    protected Session $session;
 
     public function hasPermission(Request $request): bool
     {

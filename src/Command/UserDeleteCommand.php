@@ -12,7 +12,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class UserDeleteCommand extends CommandAbstract
 {
-    protected $user;
+    protected User $user;
 
     public function __construct($name, User $user)
     {
@@ -31,7 +31,7 @@ class UserDeleteCommand extends CommandAbstract
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
-    {
+    : int {
         $email = $input->getArgument('email');
 
         try {

@@ -14,8 +14,8 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class UserCreateCommand extends CommandAbstract
 {
-    protected $user;
-    protected $formFactory;
+    protected User $user;
+    protected FormFactory $formFactory;
 
     public function __construct($name, User $user, FormFactory $formFactory)
     {
@@ -40,7 +40,7 @@ class UserCreateCommand extends CommandAbstract
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
-    {
+    : int {
         $form = $this->formFactory->create('User\Create');
 
         $values = $input->getOptions() + array('email' => $input->getArgument('email'));

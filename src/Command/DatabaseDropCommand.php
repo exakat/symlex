@@ -11,7 +11,7 @@ use Doctrine\DBAL\Connection;
  */
 class DatabaseDropCommand extends CommandAbstract
 {
-    protected $connection;
+    protected Connection $connection;
 
     public function __construct($name, Connection $connection)
     {
@@ -28,7 +28,7 @@ class DatabaseDropCommand extends CommandAbstract
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
-    {
+    : int {
         $db = $this->connection;
 
         $question = 'Are you sure you wish to drop the database "' . $db->getDatabase() . '"? (y/n)';

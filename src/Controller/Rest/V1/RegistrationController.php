@@ -19,9 +19,9 @@ use Symfony\Component\HttpFoundation\Request;
 class RegistrationController
 {
     protected $mail;
-    protected $captcha;
-    protected $formFactory;
-    protected $modelFactory;
+    protected Captcha $captcha;
+    protected FormFactory $formFactory;
+    protected ModelFactory $modelFactory;
 
     public function __construct(Captcha $captcha, Mail $mail, ModelFactory $modelFactory, FormFactory $formFactory)
     {
@@ -92,7 +92,7 @@ class RegistrationController
     }
 
     public function postAction(Request $request)
-    {
+    : array {
         $form = $this->createRegisterForm();
         $model = $this->createModel();
 
@@ -117,7 +117,7 @@ class RegistrationController
     }
 
     public function putAction($token, Request $request)
-    {
+    : array {
         $model = $this->createModel()->findByVerificationToken($token);
 
         $form = $this->createRegisterCompleteForm();

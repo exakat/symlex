@@ -9,9 +9,9 @@ use Twig_Environment;
 
 class Mail
 {
-    protected $mailer;
-    protected $twig;
-    protected $tokenGenerator;
+    protected Swift_Mailer $mailer;
+    protected Twig_Environment $twig;
+    protected TokenGenerator $tokenGenerator;
     protected $from;
 
     public function __construct(Swift_Mailer $mailer, Twig_Environment $twig, TokenGenerator $tokenGenerator, $from)
@@ -22,7 +22,7 @@ class Mail
         $this->from = $from;
     }
 
-    public function createNewMessage($subject, array $recipients, $templateName, array $values = array())
+    public function createNewMessage(string $subject, array $recipients, string $templateName, array $values = array())
     {
         $body = $this->twig->render('email/' . $templateName . '.twig', $values);
 
